@@ -18,6 +18,9 @@ export default class Navbar extends Component {
               <Link to="/" className="link-underline-dark link">
                 Products
               </Link>
+              <Link to="/" className="link-underline-dark link">
+                Home
+              </Link>
             </li>
           </ul>
         </div>
