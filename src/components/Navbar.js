@@ -5,13 +5,13 @@ import { styled } from "styled-components";
 export default class Navbar extends Component {
   render() {
     return (
-      <NavWrapper className="navbar">
+      <NavWrapper className="navbar container">
         <div className="d-flex flex-row align-items-center">
-          <span className="text-light">
+          <Logo className="text-steelblue" style={{ fontSize: "1.2rem" }}>
             <i className="fa-solid fa-a"></i>
-            <i className="fa-solid fa-m"></i>
-            <i className="fa-solid fa-cart-shopping text-light"></i>
-          </span>
+            <i className="fa-solid fa-m "></i>
+            <i className="fa-solid fa-cart-shopping text-steelblue"></i>
+          </Logo>
           {/* <Link to="/" className="m-2 link fs-5"></Link> */}
           <ul className="navbar-nav align-items-center">
             <li className="nav-items ml-5 ">
@@ -38,23 +38,36 @@ const ButtonSM = styled.button`
   background: transparent;
   border: none;
   font-size: 1.5rem;
-  color: var(--light);
+  color: var(--blue-steel);
   &:hover {
     scale: 1.1;
-    color: var(--black);
+    color: var(--blue-light);
     transition: all 0.5s ease-in;
   }
 `;
 
 const NavWrapper = styled.nav`
-  background: var(--blue-steel);
+  background: var(--light);
   display: flex;
   align-items: center;
+  color: var(--blue-steel);
   justify-content: space-between;
   padding: 11px 24px;
   .link {
-    color: #eae8e8;
+    color: var(--blue-steel);
     text-decoration: none;
-    margin: 0px 15px;
+    margin: 0px 10px;
+    font-size: 1.2rem;
+    &:hover {
+      color: var(--blue-light);
+    }
+  }
+`;
+const Logo = styled.span`
+  fontsize: 1.2rem;
+  cursor: pointer;
+  padding-right: 5px;
+  &:hover {
+    scale: 0.9;
   }
 `;
