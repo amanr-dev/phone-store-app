@@ -29,9 +29,9 @@ export default class Product extends Component {
                   }}
                 >
                   {inCart ? (
-                    <p className="text-capitalize mb-0" disabled>
+                    <BtText className="text-capitalize mb-0" disabled>
                       in cart
-                    </p>
+                    </BtText>
                   ) : (
                     <i className="fas fa-cart-plus" />
                   )}
@@ -41,8 +41,13 @@ export default class Product extends Component {
           </ProductConsumer>
           {/* Cart Footer */}
           <div className="card-footer d-flex justify-content-between">
-            <p className="align-self-center mb-0">{title}</p>
-            <h5 className="text-blue font-italic mb-0">
+            <p
+              className="align-self-center mb-0 text-gray"
+              style={{ fontWeight: "600" }}
+            >
+              {title}
+            </p>
+            <h5 className="text-steel-blue font-italic mb-0">
               <span className="mr-1">{price}</span>$
             </h5>
           </div>
@@ -101,4 +106,8 @@ const ProductWrapper = styled.div`
   .cart-btn:hover {
     color: var(--black);
   }
+`;
+
+const BtText = styled.p`
+  color: var(--gray-light);
 `;

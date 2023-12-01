@@ -46,7 +46,9 @@ class ProductProvider extends Component {
 
   addToCart = (id) => {
     let tempProduct = [...this.state.product];
+
     const index = tempProduct.indexOf(this.getItem(id));
+
     const inCartProduct = tempProduct[index];
     inCartProduct.inCart = true;
     inCartProduct.count = 1;
@@ -182,6 +184,7 @@ class ProductProvider extends Component {
       <ProductContext.Provider
         value={{
           ...this.state,
+          cart: this.state.cart,
           addToCart: this.addToCart,
           handleDetail: this.handleDetail,
           openModal: this.openModal,

@@ -31,7 +31,7 @@ export default class Modal extends Component {
                       <h5 className="text-muted">Price: ${price}</h5>
                       <Link to="/">
                         <ButtonContainer onClick={() => closeModal()}>
-                          continoue
+                          continue
                         </ButtonContainer>
                       </Link>
                       <br />

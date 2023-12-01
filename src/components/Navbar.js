@@ -1,6 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
+import { ProductConsumer, ProductContext } from "../context";
 
 export default class Navbar extends Component {
   render() {
@@ -25,8 +26,21 @@ export default class Navbar extends Component {
           </ul>
         </div>
         <Link to="/cart" className="ml-auto">
+          {/* <ProductConsumer>
+                {(value) => {
+                  return value.product.map((pro) => {
+                    return <Product key={pro.id} product={pro} />;
+                  });
+                }}
+              </ProductConsumer> */}
+
           <ButtonSM>
-            <i className="fas fa-cart-plus"></i>
+            <ProductConsumer>
+              {(value) => {
+                return <Label>{value.cart.length}</Label>;
+              }}
+            </ProductConsumer>
+            <LogoCart className="fas fa-cart-plus"></LogoCart>
           </ButtonSM>
         </Link>
       </NavWrapper>
@@ -34,16 +48,27 @@ export default class Navbar extends Component {
   }
 }
 
+const Label = styled.div`
+  font-weight: 600;
+  font-size: 20px;
+  position: absolute;
+  color: white;
+  right: 67%;
+  top: 40%;
+`;
+
+const LogoCart = styled.i``;
+
 const ButtonSM = styled.button`
-  background: transparent;
+  background: var(--blue-steel);
+  z-index: 0;
+  position: relative;
   border: none;
   font-size: 1.5rem;
-  color: var(--blue-steel);
-  &:hover {
-    scale: 1.1;
-    color: var(--blue-light);
-    transition: all 0.5s ease-in;
-  }
+  color: var(--gray-light);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 `;
 
 const NavWrapper = styled.nav`

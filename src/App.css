@@ -18,6 +18,14 @@
   box-sizing: border-box;
 }
 
+.text-gray-light {
+  color: var(--gray-light);
+}
+
+.text-gray {
+  color: var(--gray-dark);
+}
+
 .text-title {
   font-family: var(--font-family);
   letter-spacing: 0.4rem;
